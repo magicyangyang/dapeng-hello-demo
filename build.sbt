@@ -38,7 +38,9 @@ lazy val service = (project in file("dapeng-hello-demo-service"))
       "org.springframework" % "spring-context" % "4.3.5.RELEASE",
       "org.springframework" % "spring-tx" % "4.3.5.RELEASE",
       "org.springframework" % "spring-jdbc" % "4.3.5.RELEASE",
-      "com.github.dapeng" % "dapeng-client-netty" % "2.0.4"
+      "com.github.dapeng" % "dapeng-client-netty" % "2.0.4",
+      "org.mybatis.scala" % "mybatis-scala-core_2.11" % "1.0.6-SNAPSHOT",
+      "org.scalatest" % "scalatest_2.11" % "3.2.0-SNAP10"
     )).enablePlugins(ImageGeneratorPlugin)
     .enablePlugins(DbGeneratePlugin)
   .enablePlugins(RunContainerPlugin)
