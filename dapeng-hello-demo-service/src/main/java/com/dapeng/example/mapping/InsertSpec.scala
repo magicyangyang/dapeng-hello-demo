@@ -26,7 +26,7 @@ import org.scalatest._
 class InsertSpec extends FunSpec with Matchers with DatabaseSupport {
   describe("A Insert") {
     it("should insert User into user table") {
-      withReadOnly(Database.default) { implicit session =>
+      withTransaction(Database.default) { implicit session =>
         val expected = User(0, "test", "example@example.com")
 
         UserRepository.create(expected)
@@ -36,7 +36,7 @@ class InsertSpec extends FunSpec with Matchers with DatabaseSupport {
     }
 
     it("should insert User into user table from Tuple2") {
-      withReadOnly(Database.default) { implicit session =>
+      withTransaction(Database.default) { implicit session =>
         val name = "test_user"
         val email = "example@example.com"
 

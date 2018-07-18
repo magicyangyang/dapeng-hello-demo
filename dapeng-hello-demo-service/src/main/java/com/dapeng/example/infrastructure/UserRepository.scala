@@ -48,7 +48,7 @@ object UserRepository {
   }
 
   val lastInsertId = new SelectOne[Int] {
-    def xsql = <xsql>CALL IDENTITY()</xsql>
+    def xsql = <xsql>SELECT * FROM user order by id desc limit 1</xsql>
   }
 
   def bind = Seq(create, createFromTuple2, findById, findAll, lastInsertId)
